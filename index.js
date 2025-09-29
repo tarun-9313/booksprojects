@@ -4,7 +4,7 @@ var express =require("express")
 var cors=require("cors")
 
 var router = require("./routes/book-routes")
-var router = require("./routes/product-routes")
+var productrouter = require("./routes/product-routes")
 
 var  ConnectToDatabase = require("./database/db")
 
@@ -20,7 +20,7 @@ ConnectToDatabase()
 app.use(express.json())
 app.use(cors())
 app.use("/api/books",router)
-app.use("/api/products",router)
+app.use("/api/products",productrouter)
 
 var PORT = process.env.PORT || 3000
 
