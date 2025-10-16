@@ -37,8 +37,6 @@ var updateBook=async(req,res)=>{
 var deleteBook=async(req,res)=>{
     var bookId=req.params.id
     var myBook=await books.findByIdAndDelete(bookId)
-    res.status(201).json(myBook)
-
-    
+    res.status(201).json(myBook)   
 }
 module.exports={getAllBooks,getSingleBook,addNewBook,updateBook,deleteBook}
